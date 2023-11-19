@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "React JS Extension",
+    "version": "1.0.1",
+    "description": "React JS powered extension",
+    "icons": {
+        "16": "icon.png",
+        "32": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      },
+    "action": {
+      "default_title": "Click",
+      "default_popup": "popup.html"
+    },
+    "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true
+    }
+}
