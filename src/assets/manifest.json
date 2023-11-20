@@ -16,5 +16,20 @@
     "options_ui": {
       "page": "options.html",
       "open_in_tab": true
-    }
+    },
+    "permissions": [
+      "activeTab",
+      "storage",
+      "bookmarks",
+      "tabs"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://ecobees.net/*"],
+        "js": ["content_scripts.js"]
+      }
+    ]
 }
