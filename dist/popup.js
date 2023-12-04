@@ -12,19 +12,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _componets_Heading_Heading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../componets/Heading/Heading */ "./src/componets/Heading/Heading.tsx");
-/* harmony import */ var _src_styles_tailwind_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../src/styles/tailwind.css */ "./src/styles/tailwind.css");
+/* harmony import */ var _src_styles_tailwind_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../src/styles/tailwind.css */ "./src/styles/tailwind.css");
 
 
 
-
-const test = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_componets_Heading_Heading__WEBPACK_IMPORTED_MODULE_2__["default"], { title: "dnkwaornldwaopr" }),
-    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "key.png", alt: "" })));
+const body = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", { className: "w-[400px] py-4 bg-slate-800 text-white text-lg" },
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex items-center px-4 pb-4 mb-4 border-b gap-x-2" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "key.png", alt: "key", className: "w-[40px] h-[40px]" }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", { className: "text-2xl" }, "SecurePass")),
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "px-6" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "result", className: "px-4 py-2 rounded-sm bg-slate-700" }, "Click the generate button")),
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "px-6" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "text-sm" }, "Length"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "px-4 py-2 rounded-sm bg-slate-700" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "4-"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "32"))),
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "w-full px-6" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "text-sm" }, "Customize"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex gap-x-2" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Include Uppercase"),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { type: "checkbox", name: "", id: "" })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex gap-x-2" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Include Lowercase"),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { type: "checkbox", name: "", id: "" })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex gap-x-2" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Include Numbers"),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { type: "checkbox", name: "", id: "" })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex gap-x-2" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Include Symbols"),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { type: "checkbox", name: "", id: "" })))),
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "px-6" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { type: "button", className: "w-full px-2 py-2 font-semibold rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" }, "GENERATE"))));
 const container = document.createElement("div");
 document.body.appendChild(container);
 const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-root.render(test);
+root.render(body);
 
 
 /***/ })
@@ -206,7 +229,7 @@ root.render(test);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-b53f7e","src_styles_tailwind_css-src_componets_Heading_Heading_tsx"], () => (__webpack_require__("./src/popup/popup.tsx")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-b53f7e","src_styles_tailwind_css"], () => (__webpack_require__("./src/popup/popup.tsx")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
