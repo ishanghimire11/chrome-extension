@@ -1,64 +1,75 @@
 import React from "react";
-import {createRoot} from "react-dom/client"
-import Heading from "../componets/Heading/Heading";
-import "/src/styles/tailwind.css"
+import { createRoot } from "react-dom/client";
+import PasswordProvider, { usePasswordContext } from "../context/PasswordContext";
+import "/src/styles/tailwind.css";
 
-const body = (
-    <main className="w-[400px] py-4 bg-slate-800 text-white text-lg">
-        <div className="flex items-center px-4 pb-4 mb-4 border-b gap-x-2">
-            <img src="key.png" alt="key" className="w-[40px] h-[40px]"/>
-            <h3 className="text-2xl">SecurePass</h3>
-        </div>
+import { Title } from "../componets/Title/Title";
+import Slider from "../componets/Slider/Slider";
+import Customize from "./Customize";
+import PasswordGenerator from "./PasswordGenerator";
 
-        <div className="px-6">
-            <div id="result" className="px-4 py-2 rounded-sm bg-slate-700">Click the generate button</div>
-        </div>
-        <div className="px-6">
-            <span className="text-sm">Length</span>
-            <div className="px-4 py-2 rounded-sm bg-slate-700">
-                <span>4-</span>
-                <span>32</span>
-            </div>
-        </div>
+const options = [
+    { name: 'Include Uppercase', key: 'includeUpperCase' },
+    { name: 'Include Lowercase', key: 'includeLowerCase' },
+    { name: 'Include Numbers', key: 'includeNumbers' },
+    { name: 'Include Symbols', key: 'includeSymbols' }
+];
 
-        <div className="w-full px-6">
-            <span className="text-sm">Customize</span>
-            <div>
-                <div className="flex gap-x-2">
-                    <span>
-                        Include Uppercase
-                    </span>
-                    <input type="checkbox" name="" id="" />
-                </div>
-                <div className="flex gap-x-2">
-                    <span>
-                        Include Lowercase
-                    </span>
-                    <input type="checkbox" name="" id="" />
-                </div>
-                <div className="flex gap-x-2">
-                    <span>
-                        Include Numbers
-                    </span>
-                    <input type="checkbox" name="" id="" />
-                </div>
-                <div className="flex gap-x-2">
-                    <span>
-                        Include Symbols
-                    </span>
-                    <input type="checkbox" name="" id="" />
-                </div>
-            </div>
-        </div>
+const charSets = {
+    includeUpperCase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    includeLowerCase: 'abcdefghijklmnopqrstuvwxyz',
+    includeNumbers: '0123456789',
+    includeSymbols: '!@#$%^&*()-=_+[]{}|;:,.<>?'
+};
 
-        <div className="px-6">
-            <button type="button" className="w-full px-2 py-2 font-semibold rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">GENERATE</button>
-        </div>
-    </main>
+const Header = () => (
+    <header className="flex items-center px-4 pb-4 mb-8 border-b gap-x-2">
+      <img src="key.png" alt="key" className="w-[40px] h-[40px]" />
+      <h3 className="text-2xl">SecurePass</h3>
+    </header>
 );
 
-const container = document.createElement("div");
-document.body.appendChild(container);
+const ResultSection = () => {
+    const {passwordResult} = usePasswordContext();
+    
+    return (
+        <div className="w-full mb-6">
+            <div className="px-4 py-2 rounded-sm bg-slate-700"><span id="result" className="text-[15px]">{passwordResult}</span></div>
+        </div>
+    );
+};
 
+const LengthSection = () => (
+    <div className="w-full mb-6">
+      <Title name="Length" />
+      <Slider />
+    </div>
+  );   
+
+const CustomizeSection = ({ options }) => (
+    <div className="w-full mb-6">
+      <Title name="Customize" />
+      <div className="flex flex-col gap-y-2">
+        {options.map((option) => (
+          <Customize key={option.key} option={option} />
+        ))}
+      </div>
+    </div>
+);
+
+const body = (
+    <div className="w-[400px] py-6 bg-slate-800 text-white text-lg">
+        <Header />
+        <div className="px-6 content">        
+            <ResultSection />
+            <LengthSection />
+            <CustomizeSection options={options} />
+            <PasswordGenerator options={options} charSets={charSets}/>
+        </div>
+    </div>
+);
+
+const container = document.createElement("main");
+document.body.appendChild(container);
 const root  = createRoot(container);
-root.render(body);
+root.render(<PasswordProvider>{body}</PasswordProvider>);
