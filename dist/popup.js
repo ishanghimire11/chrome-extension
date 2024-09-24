@@ -25,7 +25,7 @@ const Slider = () => {
         return handleSliderChange(value);
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_slider__WEBPACK_IMPORTED_MODULE_2__["default"], { className: "relative font-extrabold horizontal-slider", thumbClassName: "bg-blue-500 text-xs rounded-full text-white -top-3 cursor-grab focus:outline-none focus-within:outline-none h-[24px] w-[24px] flex items-center justify-center", trackClassName: "bg-blue-500 rounded-full track pb-[2px]", max: 32, min: 8, onAfterChange: handleSliderValue, defaultValue: passwordLength, renderThumb: (props, state) => react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", Object.assign({}, props), state.valueNow) })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_slider__WEBPACK_IMPORTED_MODULE_2__["default"], { className: "relative font-extrabold horizontal-slider", thumbClassName: "bg-blue-500 text-xs rounded-full text-white -top-[9px] cursor-grab focus:outline-none focus-within:outline-none h-[24px] w-[24px] flex items-center justify-center", trackClassName: "bg-blue-500 rounded-full track pb-[4px]", max: 32, min: 8, onAfterChange: handleSliderValue, defaultValue: passwordLength, renderThumb: (props, state) => react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", Object.assign({}, props), state.valueNow) })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Slider);
 
@@ -69,7 +69,7 @@ __webpack_require__.r(__webpack_exports__);
 const PasswordContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(undefined);
 const PasswordProvider = ({ children }) => {
     const [passwordLength, setPasswordLength] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(20);
-    const [passwordResult, setResult] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("Click generate button");
+    const [passwordResult, setResult] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
     const [toggleStates, setToggleStates] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
         includeUpperCase: true,
         includeLowerCase: true,
@@ -91,14 +91,14 @@ const PasswordProvider = ({ children }) => {
             passwordResult,
             handleSliderChange,
             handleToggleChange,
-            handleResult
+            handleResult,
         } }, children));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PasswordProvider);
 const usePasswordContext = () => {
     const context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(PasswordContext);
     if (!context) {
-        throw new Error('usePasswordContext must be used within a PasswordProvider');
+        throw new Error("usePasswordContext must be used within a PasswordProvider");
     }
     return context;
 };
@@ -220,6 +220,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componets_Slider_Slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../componets/Slider/Slider */ "./src/componets/Slider/Slider.tsx");
 /* harmony import */ var _Customize__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Customize */ "./src/popup/Customize.tsx");
 /* harmony import */ var _PasswordGenerator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./PasswordGenerator */ "./src/popup/PasswordGenerator.tsx");
+/* harmony import */ var _heroicons_react_24_solid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @heroicons/react/24/solid */ "./node_modules/@heroicons/react/24/solid/esm/CheckIcon.js");
+/* harmony import */ var _heroicons_react_24_solid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @heroicons/react/24/solid */ "./node_modules/@heroicons/react/24/solid/esm/ClipboardIcon.js");
+
 
 
 
@@ -229,33 +232,91 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const options = [
-    { name: 'Include Uppercase', key: 'includeUpperCase' },
-    { name: 'Include Lowercase', key: 'includeLowerCase' },
-    { name: 'Include Numbers', key: 'includeNumbers' },
-    { name: 'Include Symbols', key: 'includeSymbols' }
+    { name: "Include Uppercase", key: "includeUpperCase" },
+    { name: "Include Lowercase", key: "includeLowerCase" },
+    { name: "Include Numbers", key: "includeNumbers" },
+    { name: "Include Symbols", key: "includeSymbols" },
 ];
 const charSets = {
-    includeUpperCase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    includeLowerCase: 'abcdefghijklmnopqrstuvwxyz',
-    includeNumbers: '0123456789',
-    includeSymbols: '!@#$%^&*()-=_+[]{}|;:,.<>?'
+    includeUpperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    includeLowerCase: "abcdefghijklmnopqrstuvwxyz",
+    includeNumbers: "0123456789",
+    includeSymbols: "!@#$%^&*()-=_+[]{}|;:,.<>?",
 };
-const Header = () => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", { className: "flex items-center px-4 pb-4 mb-8 border-b gap-x-2" },
+// const Header = () => (
+//   <header className="flex items-center px-4 pb-4 mb-8 border-b gap-x-2">
+//     <img src="key.png" alt="key" className="w-[40px] h-[40px]" />
+//     <h3 className="text-2xl">SecurePass</h3>
+//   </header>
+// );
+// const ResultSection = () => {
+//   const { passwordResult } = usePasswordContext();
+//   return (
+//     <div className="w-full mb-6">
+//       <div className="px-4 py-2 rounded-sm bg-slate-700">
+//         <span id="result" className="text-[15px]">
+//           {passwordResult}
+//         </span>
+//       </div>
+//     </div>
+//   );
+// };
+// const LengthSection = () => (
+//   <div className="w-full mb-6">
+//     <Title name="Length" />
+//     <Slider />
+//   </div>
+// );
+// const CustomizeSection = ({ options }) => (
+//   <div className="w-full mb-6">
+//     <Title name="Customize" />
+//     <div className="flex flex-col gap-y-2">
+//       {options.map((option) => (
+//         <Customize key={option.key} option={option} />
+//       ))}
+//     </div>
+//   </div>
+// );
+// const body = (
+//   <div className="w-[400px] py-6 bg-slate-800 text-white text-lg">
+//     <Header />
+//     <div className="px-6 content">
+//       <ResultSection />
+//       <LengthSection />
+//       <CustomizeSection options={options} />
+//       <PasswordGenerator options={options} charSets={charSets} />
+//     </div>
+//   </div>
+// );
+const Header = () => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", { className: "flex items-center px-6 pb-6 mb-6 border-b border-slate-600 gap-x-3" },
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "key.png", alt: "key", className: "w-[40px] h-[40px]" }),
-    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", { className: "text-2xl" }, "SecurePass")));
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", { className: "text-2xl font-bold text-white" }, "SuggestPass")));
 const ResultSection = () => {
     const { passwordResult } = (0,_context_PasswordContext__WEBPACK_IMPORTED_MODULE_2__.usePasswordContext)();
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "w-full mb-6" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "px-4 py-2 rounded-sm bg-slate-700" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { id: "result", className: "text-[15px]" }, passwordResult))));
+    const [copied, setCopied] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(passwordResult);
+        setCopied(true);
+        setTimeout(() => {
+            setCopied(false);
+        }, 2000);
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "relative w-full mb-6" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex items-center justify-between px-4 py-2 rounded-md bg-slate-700" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { id: "result", className: "text-[16px] tracking-wide" }, passwordResult || (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "opacity-70" }, "Your password will appear here...")))),
+        passwordResult && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: copyToClipboard, className: "block mt-4 ml-auto text-sm text-right hover:text-indigo-500 w-fit", disabled: copied }, copied ? (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", { className: "flex items-center text-white gap-x-1" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Copied"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_heroicons_react_24_solid__WEBPACK_IMPORTED_MODULE_8__["default"], { className: "w-4 h-4" }))) : (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", { className: "flex items-center text-white gap-x-1" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Copy"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_heroicons_react_24_solid__WEBPACK_IMPORTED_MODULE_9__["default"], { className: "w-4 h-4" })))))));
 };
 const LengthSection = () => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "w-full mb-6" },
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_componets_Title_Title__WEBPACK_IMPORTED_MODULE_4__.Title, { name: "Length" }),
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_componets_Slider_Slider__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
 const CustomizeSection = ({ options }) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "w-full mb-6" },
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_componets_Title_Title__WEBPACK_IMPORTED_MODULE_4__.Title, { name: "Customize" }),
-    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex flex-col gap-y-2" }, options.map((option) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Customize__WEBPACK_IMPORTED_MODULE_6__["default"], { key: option.key, option: option }))))));
-const body = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "w-[400px] py-6 bg-slate-800 text-white text-lg" },
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex flex-col gap-y-3" }, options.map((option) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Customize__WEBPACK_IMPORTED_MODULE_6__["default"], { key: option.key, option: option }))))));
+const body = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "w-[400px] py-4 bg-slate-900 text-white text-lg shadow-lg" },
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Header, null),
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "px-6 content" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ResultSection, null),
@@ -477,7 +538,7 @@ root.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_context_
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-b53f7e","vendors-node_modules_headlessui_react_dist_components_switch_switch_js-node_modules_react-sli-d7331e","src_styles_tailwind_css"], () => (__webpack_require__("./src/popup/popup.tsx")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-b53f7e","vendors-node_modules_headlessui_react_dist_components_switch_switch_js-node_modules_heroicons-5b9878","src_styles_tailwind_css"], () => (__webpack_require__("./src/popup/popup.tsx")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
