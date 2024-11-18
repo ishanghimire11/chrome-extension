@@ -14,7 +14,7 @@ const PasswordContext = createContext<PasswordContextProps | undefined>(
 );
 
 const PasswordProvider = ({ children }) => {
-  const [passwordLength, setPasswordLength] = useState(20);
+  const [passwordLength, setPasswordLength] = useState(18);
   const [passwordResult, setResult] = useState("");
 
   const [toggleStates, setToggleStates] = useState({

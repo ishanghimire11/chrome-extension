@@ -25,7 +25,7 @@ const Slider = () => {
         return handleSliderChange(value);
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_slider__WEBPACK_IMPORTED_MODULE_2__["default"], { className: "relative font-extrabold horizontal-slider", thumbClassName: "bg-blue-500 text-xs rounded-full text-white -top-[9px] cursor-grab focus:outline-none focus-within:outline-none h-[24px] w-[24px] flex items-center justify-center", trackClassName: "bg-blue-500 rounded-full track pb-[4px]", max: 32, min: 8, onAfterChange: handleSliderValue, defaultValue: passwordLength, renderThumb: (props, state) => react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", Object.assign({}, props), state.valueNow) })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_slider__WEBPACK_IMPORTED_MODULE_2__["default"], { className: "relative font-extrabold horizontal-slider", thumbClassName: "bg-blue-500 text-xs rounded-full text-white -top-[9px] cursor-grab focus:outline-none focus-within:outline-none h-[24px] w-[24px] flex items-center justify-center", trackClassName: "bg-blue-500 rounded-full track pb-[4px]", max: 28, min: 8, onAfterChange: handleSliderValue, defaultValue: passwordLength, renderThumb: (props, state) => react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", Object.assign({}, props), state.valueNow) })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Slider);
 
@@ -68,7 +68,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const PasswordContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(undefined);
 const PasswordProvider = ({ children }) => {
-    const [passwordLength, setPasswordLength] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(20);
+    const [passwordLength, setPasswordLength] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(18);
     const [passwordResult, setResult] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
     const [toggleStates, setToggleStates] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
         includeUpperCase: true,

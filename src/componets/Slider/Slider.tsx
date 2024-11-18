@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactSlider from "react-slider";
 import { usePasswordContext } from "../../context/PasswordContext";
 
@@ -15,7 +15,7 @@ const Slider = () => {
         className="relative font-extrabold horizontal-slider"
         thumbClassName="bg-blue-500 text-xs rounded-full text-white -top-[9px] cursor-grab focus:outline-none focus-within:outline-none h-[24px] w-[24px] flex items-center justify-center"
         trackClassName="bg-blue-500 rounded-full track pb-[4px]"
-        max={32}
+        max={28}
         min={8}
         onAfterChange={handleSliderValue}
         defaultValue={passwordLength}

@@ -35,14 +35,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _componets_Heading_Heading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../componets/Heading/Heading */ "./src/componets/Heading/Heading.tsx");
-/* harmony import */ var _src_styles_tailwind_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../src/styles/tailwind.css */ "./src/styles/tailwind.css");
+/* harmony import */ var _src_styles_tailwind_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../src/styles/tailwind.css */ "./src/styles/tailwind.css");
+/* harmony import */ var _componets_Heading_Heading__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../componets/Heading/Heading */ "./src/componets/Heading/Heading.tsx");
 
 
 
 
 const test = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_componets_Heading_Heading__WEBPACK_IMPORTED_MODULE_2__["default"], { title: "Optionsssssssss" })));
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_componets_Heading_Heading__WEBPACK_IMPORTED_MODULE_3__["default"], { title: "Optionsssssssss" })));
 const container = document.createElement("div");
 document.body.appendChild(container);
 const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);

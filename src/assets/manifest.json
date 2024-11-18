@@ -1,35 +1,24 @@
 {
-    "manifest_version": 3,
-    "name": "React JS Extension",
-    "version": "1.0.1",
-    "description": "React JS powered extension",
-    "icons": {
-        "16": "icon.png",
-        "32": "icon.png",
-        "48": "icon.png",
-        "128": "icon.png"
-      },
-    "action": {
-      "default_title": "Click",
-      "default_popup": "popup.html"
-    },
-    "options_ui": {
-      "page": "options.html",
-      "open_in_tab": true
-    },
-    "permissions": [
-      "activeTab",
-      "storage",
-      "bookmarks",
-      "tabs"
-    ],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://ecobees.net/*"],
-        "js": ["content_scripts.js"]
-      }
-    ]
+  "manifest_version": 3,
+  "name": "SuggestPass",
+  "version": "1.0.1",
+  "description": "A chrome extension for easy and strong password suggestion.",
+  "icons": {
+    "16": "key.png",
+    "32": "key.png",
+    "48": "key.png",
+    "128": "key.png"
+  },
+  "action": {
+    "default_title": "Click",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "permissions": ["activeTab", "storage", "bookmarks", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
